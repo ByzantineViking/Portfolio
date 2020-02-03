@@ -26,9 +26,7 @@ function App() {
   return (
     <div>
       <Menu/>
-      <LandingPage/>
       <Copyright />
-      
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
 /* CssBaseline:
  * Removes margin in all brosers
  * Default Material Design background color is applied
@@ -48,4 +49,4 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
 }
 
 
-export default LandingPage
+export default connect()(LandingPage)

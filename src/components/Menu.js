@@ -1,5 +1,6 @@
 import React from 'react'
-
+import Drawer from './Drawer'
+import { setPage, toggleDrawer } from '../reducers/navigationReducers'
 import { 
     Container, 
     Typography, 
@@ -44,6 +45,7 @@ const useStyles = makeStyles(theme => ({
     title: {
         flexGrow: 1,
     },
+    // Empty div at the same height at of the top menu
     offset: theme.mixins.toolbar,
 }))
 
@@ -66,25 +68,28 @@ const Menu = (props) => {
             <HideOnScroll {...props}>
                 <AppBar>
                     <Toolbar>
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <IconButton onClick={() => props.toggleDrawer(true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" className={classes.title}>
-                            News
+                            ByzantineViking/portfolio
                         </Typography>
                         <Button color="inherit">Login</Button>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
             <div className={classes.offset} />  
+            <Drawer/>
         </div>  
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        page: state.page
+        page: state.page,
+        open: state.open
 
     }
 }
-export default connect(mapStateToProps, null)(Menu)
+
+export default connect(mapStateToProps, { setPage, toggleDrawer })(Menu)
