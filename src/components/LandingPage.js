@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import { CssBaseline, Container, Typography, Button, Paper, Box } from '@material-ui/core'
 
 const LandingPage = (props) => {
-    
+
     return(
         <React.Fragment>
             <CssBaseline />
@@ -18,10 +18,10 @@ const LandingPage = (props) => {
                 <Paper>
                     <Typography variant='h3' paragraph>
                         Welcome!
-                </Typography>
+                    </Typography>
                     <Typography variant='body1' paragraph>
                         Click below to view the source code
-                </Typography>
+                    </Typography>
                     <Button
                         href="https://www.github.com/ByzantineViking/portfolio-frontend"
                         target="_blank"
@@ -31,7 +31,7 @@ const LandingPage = (props) => {
                         size="small"
                     >
                         Code&lt;&gt;
-                </Button>
+                    </Button>
                 </Paper>
                 <Box my={2}>
                     {[...new Array(50)]

@@ -136,7 +136,7 @@ const ProjectsPage = (props) => {
                 </TabPanel>
                 <TabPanel value={props.tab} index={2} dir={theme.direction}>
                     Item Three
-                 </TabPanel>
+                </TabPanel>
             </SwipeableViews>
             {fabs.map((fab, index) => (
                 <Zoom
@@ -163,4 +163,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {setProjectTab})(ProjectsPage)
+export default connect(mapStateToProps, { setProjectTab })(ProjectsPage)

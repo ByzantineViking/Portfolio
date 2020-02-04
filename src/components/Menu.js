@@ -1,13 +1,13 @@
 import React from 'react'
 import Drawer from './Drawer'
 import { setPage, toggleDrawer } from '../reducers/navigationReducers'
-import { 
-    Container, 
-    Typography, 
-    Box, 
-    Button, 
-    AppBar, 
-    Toolbar, 
+import {
+    Container,
+    Typography,
+    Box,
+    Button,
+    AppBar,
+    Toolbar,
     IconButton,
     useScrollTrigger,
     Zoom,
@@ -17,12 +17,12 @@ import {
 } from '@material-ui/core'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { green } from '@material-ui/core/colors'
-import { 
+import {
     AccountCircle,
     Menu as MenuIcon,
     KeyboardArrowUp,
 
- } from '@material-ui/icons';
+} from '@material-ui/icons'
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -33,7 +33,7 @@ const sections = [
     { title: 'Photography', url: '/photography' },
     { title: 'About', url: '/about' },
 
-];
+]
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -49,12 +49,12 @@ const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
 }))
 
-const HideOnScroll = ({children}) => {
+const HideOnScroll = ({ children }) => {
     return (
         <Slide appear={false} direction="down" in={!useScrollTrigger()}>
             {children}
         </Slide>
-    );
+    )
 }
 
 HideOnScroll.propTypes = {
@@ -64,7 +64,7 @@ const Menu = (props) => {
     const classes = useStyles()
     return(
         <div className={classes.root}>
-                 
+
             <HideOnScroll {...props}>
                 <AppBar>
                     <Toolbar>
@@ -78,9 +78,9 @@ const Menu = (props) => {
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
-            <div className={classes.offset} />  
+            <div className={classes.offset} />
             <Drawer/>
-        </div>  
+        </div>
     )
 }
 

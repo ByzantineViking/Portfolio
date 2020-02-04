@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import App from './App';
+import App from './App'
 import ProjectsPage from './components/ProjectsPage'
 import LandingPage from './components/LandingPage'
 
