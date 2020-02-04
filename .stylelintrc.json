@@ -1,0 +1,15 @@
+{
+    "extends": "stylelint-config-sass-guidelines",
+    "defaultSeverity": "warning",
+    "plugins": [
+        "stylelint-scss"
+    ],
+    "rules": {
+        "scss/selector-no-redundant-nesting-selector": true,
+        "at-rule-blacklist": [
+            "debug"
+        ],
+        "scss/at-extend-no-missing-placeholder": true,
+        "indentation": 4
+    }
+}

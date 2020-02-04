@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../stylesheets/LandingPage.css'
 import { connect } from 'react-redux'
 /* CssBaseline:
  * Removes margin in all brosers
@@ -15,7 +15,7 @@ const LandingPage = (props) => {
         <React.Fragment>
             <CssBaseline />
             <Container>
-                <Paper>
+                <div className="landingGrid">
                     <Typography variant='h3' paragraph>
                         Welcome!
                     </Typography>
@@ -32,17 +32,8 @@ const LandingPage = (props) => {
                     >
                         Code&lt;&gt;
                     </Button>
-                </Paper>
-                <Box my={2}>
-                    {[...new Array(50)]
-                        .map(
-                            () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-                        )
-                        .join('\n')}
-                </Box>
+                </div>
+
             </Container>
         </React.Fragment>
     )
