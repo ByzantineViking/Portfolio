@@ -8,25 +8,13 @@ import {
     KeyboardArrowUp
 } from '@material-ui/icons'
 
-const Copyright = () => {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright ©'}
-            <Link color="inherit" href="https://github.com/ByzantineViking">
-        ByzantineViking
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    )
-}
+
 
 
 function App() {
     return (
         <div>
             <Menu/>
-            <Copyright />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 
 const initialState = {
-    menu: "/",
+    menu: '/',
     drawer: false,
     tab: 0,
 }
@@ -17,10 +17,10 @@ export const setPage = (menu) => {
 }
 export const menuReducer = (state = initialState.menu, action) => {
     switch(action.type) {
-        case 'CHANGE_PAGE':
-            return action.data.menu
-        default:
-            return state
+    case 'CHANGE_PAGE':
+        return action.data.menu
+    default:
+        return state
     }
 }
 export const setProjectTab = (tab) => {
@@ -33,10 +33,10 @@ export const setProjectTab = (tab) => {
 }
 export const projectTabReducer = (state = initialState.tab, action) => {
     switch (action.type) {
-        case 'CHANGE_TAB':
-            return action.data.tab
-        default:
-            return state
+    case 'CHANGE_TAB':
+        return action.data.tab
+    default:
+        return state
     }
 }
 
@@ -50,10 +50,10 @@ export const toggleDrawer = (open) => {
 }
 export const drawerReducer = (state = initialState.drawer, action) => {
     switch(action.type) {
-        case 'TOGGLE_DRAWER':
-            return action.data.open
-        default:
-            return state
+    case 'TOGGLE_DRAWER':
+        return action.data.open
+    default:
+        return state
     }
-    
+
 }

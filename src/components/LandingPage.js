@@ -8,6 +8,8 @@ import { connect } from 'react-redux'
  * font antialiasing is enabled for the Roboto font.
  */
 import { CssBaseline, Container, Typography, Button, Paper, Box } from '@material-ui/core'
+import Welcome from './LandingPageComponents/Welcome'
+
 
 const LandingPage = (props) => {
 
@@ -15,23 +17,8 @@ const LandingPage = (props) => {
         <React.Fragment>
             <CssBaseline />
             <Container>
-                <div className="landingGrid">
-                    <Typography variant='h3' paragraph>
-                        Welcome!
-                    </Typography>
-                    <Typography variant='body1' paragraph>
-                        Click below to view the source code
-                    </Typography>
-                    <Button
-                        href="https://www.github.com/ByzantineViking/portfolio-frontend"
-                        target="_blank"
-                        variant="outlined"
-                        rel="noopener noreferrer"
-                        color="primary"
-                        size="small"
-                    >
-                        Code&lt;&gt;
-                    </Button>
+                <div className="landing-grid">
+                    <Welcome className="grid-item"/>
                 </div>
 
             </Container>

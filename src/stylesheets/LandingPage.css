@@ -1,5 +1,12 @@
-.landing-grid .grid-item {
-  color: #123;
+.landing-grid {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 2fr 0.5fr;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 1%;
 }
 
-/*# sourceMappingURL=landingpage.css.map */
+.about-me-item {
+  height: 100%;
+}
+
+/*# sourceMappingURL=LandingPage.css.map */

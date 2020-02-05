@@ -4,7 +4,12 @@
 $primary-color: #333;
 
 .landing-grid {
-    .grid-item {
-        color: #123;
-    }
+    display: grid;
+    grid-template-columns:  0.5fr  2fr 2fr 0.5fr;
+    grid-template-rows: 1fr auto 1fr;
+    gap: 1%;
+}
+
+.about-me-item {
+    height: 100%;
 }

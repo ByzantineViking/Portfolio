@@ -1,5 +1,4 @@
 import React from 'react'
-import Drawer from './Drawer'
 import { setPage, toggleDrawer } from '../reducers/navigationReducers'
 import {
     Container,
@@ -66,20 +65,17 @@ const Menu = (props) => {
         <div className={classes.root}>
 
             <HideOnScroll {...props}>
-                <AppBar>
+                <AppBar color="transparent">
                     <Toolbar>
-                        <IconButton onClick={() => props.toggleDrawer(true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                            <MenuIcon />
-                        </IconButton>
                         <Typography variant="h6" className={classes.title}>
-                            ByzantineViking/portfolio
+                            Teemu Saravirta
                         </Typography>
-                        <Button color="inherit">Login</Button>
+                        <Button color="inherit">Projects</Button>
+                        <Button color="inherit">About Me</Button>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
             <div className={classes.offset} />
-            <Drawer/>
         </div>
     )
 }
