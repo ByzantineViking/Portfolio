@@ -26,20 +26,11 @@ import {
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-const sections = [
-    { title: 'Home', url: '/' },
-    { title: 'Projects', url: '/projects' },
-    { title: 'Photography', url: '/photography' },
-    { title: 'About', url: '/about' },
-
-]
 
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2)
+        color: 'secondary',
     },
     title: {
         flexGrow: 1,
@@ -65,9 +56,9 @@ const Menu = (props) => {
         <div className={classes.root}>
 
             <HideOnScroll {...props}>
-                <AppBar color="transparent">
+                <AppBar color="secondary">
                     <Toolbar>
-                        <Typography variant="h6" className={classes.title}>
+                        <Typography variant="h6" className={classes.title} color="textPrimary">
                             Teemu Saravirta
                         </Typography>
                         <Button color="inherit">Projects</Button>

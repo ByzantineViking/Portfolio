@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Typography, Button } from '@material-ui/core'
 
-const Welcome = (props) => {
+const Me = (props) => {
 
     return(
         <div className="welcome-item">
@@ -27,4 +27,4 @@ const Welcome = (props) => {
 }
 
 
-export default Welcome
+export default Me

@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
  * font antialiasing is enabled for the Roboto font.
  */
 import { CssBaseline, Container, Typography, Button, Paper, Box } from '@material-ui/core'
-import Welcome from './LandingPageComponents/Welcome'
+import Me from './LandingPageComponents/Me'
 
 
 const LandingPage = (props) => {
@@ -18,7 +18,7 @@ const LandingPage = (props) => {
             <CssBaseline />
             <Container>
                 <div className="landing-grid">
-                    <Welcome className="grid-item"/>
+                    <Me className="grid-item"/>
                 </div>
 
             </Container>
