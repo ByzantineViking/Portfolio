@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../stylesheets/LandingPage.css'
 import { connect } from 'react-redux'
 import ScrollMagic from 'scrollmagic'
-
+import staircase from './LandingPageComponents/Images/grand_staircase_1.png'
 /* CssBaseline:
  * Removes margin in all brosers
  * Default Material Design background color is applied
@@ -15,20 +15,45 @@ import ProjectCard from './LandingPageComponents/ProjectCard'
 
 
 const LandingPage = (props) => {
+    // As scrollmagic pins are not compatible with React, use this to set pins visible
+    const pinDebug = 'pin'
     const controller = new ScrollMagic.Controller()
-    const revealElement = document.getElementsByClassName('test-item')
-    const callback = (event) => {
+    const revealWelcome = document.getElementsByClassName('welcome-item')
+    const revealThreeD = document.getElementsByClassName('threeD')
+    const eventLogger = (event) => {
         console.log('Event fired!', event.type)
-        props.setWelcomeVisibility()
     }
     useEffect(() => {
         new ScrollMagic.Scene({
             triggerElement: '#pin1',
-            triggerHook: 0.9,
+            triggerHook: 0.25,
         })
-            .setClassToggle(revealElement[0], 'visible')
+            .setClassToggle(revealWelcome[0], 'hidden')
             .addTo(controller) // assign the scene to the controller
-            .on('change progress start end enter leave', callback)
+            .on('start leave', eventLogger)
+
+    })
+    useEffect(() => {
+        new ScrollMagic.Scene({
+            triggerElement: '#pin2',
+            triggerHook: 0.8,
+            duration: '60%',
+        })
+            .setClassToggle(revealThreeD[0], 'visible')
+            .addTo(controller) // assign the scene to the controller
+            .on('start leave', eventLogger)
+
+    })
+    useEffect(() => {
+        new ScrollMagic.Scene({
+            triggerElement: '#pin2',
+            triggerHook: 0.8,
+            duration: '60%',
+        })
+            .setClassToggle(revealThreeD[1], 'visible')
+            .addTo(controller) // assign the scene to the controller
+            .on('start leave', eventLogger)
+
     })
     return(
         <React.Fragment>
@@ -36,13 +61,14 @@ const LandingPage = (props) => {
             <Container>
                 <div className="landing-grid">
                     <Me/>
-                    <div className="test-item">DEBUG</div>
-                    <div id="pin1">pin1</div>
+                    <div id="pin1">{pinDebug + (pinDebug ? '1' : '')}</div>
+                    <div id="pin2">{pinDebug + (pinDebug ? '2' : '')}</div>
                     <ProjectCard
-                        className="threeD-project-card"
+                        className="threeD-project-card threeD"
                         title="threeD"
                         body="A from-scratch 3D engine"
                     />
+                    <img className="threeD-staircase threeD" src={staircase}/>
                 </div>
 
             </Container>

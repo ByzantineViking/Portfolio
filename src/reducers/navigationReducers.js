@@ -4,7 +4,7 @@ const initialState = {
     drawer: false,
     tab: 0,
     visibility: {
-        welcomeCardVisibility: false,
+        welcomeCardVisibility: true,
         threeDCardVisibility: false,
     }
 }
