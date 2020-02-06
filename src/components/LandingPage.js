@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import '../stylesheets/LandingPage.css'
 import { connect } from 'react-redux'
 import ScrollMagic from 'scrollmagic'
 import staircase from './LandingPageComponents/Images/grand_staircase_1.png'
+import enemy from './LandingPageComponents/Images/enemy.svg'
+
 /* CssBaseline:
  * Removes margin in all brosers
  * Default Material Design background color is applied
@@ -20,6 +22,7 @@ const LandingPage = (props) => {
     const controller = new ScrollMagic.Controller()
     const revealWelcome = document.getElementsByClassName('welcome-item')
     const revealThreeD = document.getElementsByClassName('threeD')
+    const revealJunction = document.getElementsByClassName('junction')
     const eventLogger = (event) => {
         console.log('Event fired!', event.type)
     }
@@ -37,7 +40,7 @@ const LandingPage = (props) => {
         new ScrollMagic.Scene({
             triggerElement: '#pin2',
             triggerHook: 0.8,
-            duration: '60%',
+            duration: '80%',
         })
             .setClassToggle(revealThreeD[0], 'visible')
             .addTo(controller) // assign the scene to the controller
@@ -48,12 +51,30 @@ const LandingPage = (props) => {
         new ScrollMagic.Scene({
             triggerElement: '#pin2',
             triggerHook: 0.8,
-            duration: '60%',
+            duration: '80%',
         })
             .setClassToggle(revealThreeD[1], 'visible')
             .addTo(controller) // assign the scene to the controller
             .on('start leave', eventLogger)
 
+    })
+    useEffect(() => {
+        new ScrollMagic.Scene({
+            triggerElement: '#pin3',
+            triggerHook: 0.6,
+        })
+            .setClassToggle(revealJunction[0], 'visible')
+            .addTo(controller) // assign the scene to the controller
+            .on('start leave', eventLogger)
+    })
+    useEffect(() => {
+        new ScrollMagic.Scene({
+            triggerElement: '#pin3',
+            triggerHook: 0.6,
+        })
+            .setClassToggle(revealJunction[1], 'visible')
+            .addTo(controller) // assign the scene to the controller
+            .on('start leave', eventLogger)
     })
     return(
         <React.Fragment>
@@ -69,6 +90,13 @@ const LandingPage = (props) => {
                         body="A from-scratch 3D engine"
                     />
                     <img className="threeD-staircase threeD" src={staircase}/>
+                    <div id="pin3">{pinDebug + (pinDebug ? '3' : '')}</div>
+                    <ProjectCard
+                        className="junction-project-card junction"
+                        title="Junction"
+                        body="Graphics for a futuristic browser game"
+                    />
+                    <img className="junction-enemy junction" src={enemy} />
                 </div>
 
             </Container>
@@ -76,17 +104,4 @@ const LandingPage = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        welcomeCardVisibility: state.welcomeCardVisibility,
-        threeDCardVisibility: state.threeDCardVisibility,
-
-    }
-}
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setWelcomeVisibility: () => dispatch({ type: 'SET_WELCOME_VISIBILITY' }),
-        setthreeDVisibility: () => dispatch({ type: 'SET_THREED_VISIBILITY' })
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(LandingPage)
+export default connect()(LandingPage)

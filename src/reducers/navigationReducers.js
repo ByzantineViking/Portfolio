@@ -62,21 +62,3 @@ export const drawerReducer = (state = initialState.drawer, action) => {
 
 }
 
-
-// Testing card visibility as direct dispatchs
-export const welcomeVisibilityReducer = (state = initialState.visibility.welcomeCardVisibility, action) => {
-    switch (action.type) {
-        case 'SET_WELCOME_VISIBILITY':
-            return !state.welcomeCardVisibility
-        default:
-            return state
-    }
-}
-export const threeDVisibilityReducer = (state = initialState.visibility.threeDCardVisibility, action) => {
-    switch(action.type) {
-        case 'SET_THREED_VISIBILITY':
-            return !state.threeDCardVisibility
-        default:
-            return state
-    }
-}

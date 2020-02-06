@@ -5,20 +5,28 @@ $primary-color: #333;
 
 .landing-grid {
     display: grid;
-    grid-template-columns: 10% auto auto;
-    grid-template-rows: repeat(10, 1fr 1fr);
-    gap: 1%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr repeat(3, 1fr 1fr);
     overflow: hidden;
     position: relative;
 }
 .welcome-item {
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
     grid-row: 2 / 3;
     transition: all 1s ease-out;
 }
-#pin1 {
-    grid-row: 2;
+%pin {
+    grid-column: 1;
+    width: min-content;
+    height: min-content;
+    justify-self: end;
     font-size: 20px;
+    z-index: 2;
+}
+#pin1 {
+    @extend %pin;
+    grid-row: 2;
+    
 }
 .welcome-item.hidden {
     opacity: 0;
@@ -28,29 +36,27 @@ $primary-color: #333;
 
 .threeD-project-card {
     opacity: 0;
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
     grid-row: 4 / 5;
     transition: all 1s ease-out;
 }
 #pin2 {
+    @extend %pin;
     grid-row: 4;
-    grid-column: 1;
-    font-size: 20px;
-    z-index: 2;
 }
 .threeD-project-card.visible {
     opacity: 1;
-    transform: translateX(2.5%);
+    transform: translateX(10%);
     transition: all 1s ease-out;
 }
 
 .threeD-staircase {
     opacity: 0;
     grid-row: 4;
-    grid-column: 2;
+    grid-column: 1;
     z-index: -1;
     overflow: visible;
-    transition: all 1s ease-out;
+    transition: all 0.5s ease-out;
 }
 .threeD-staircase.visible {
     opacity: 1;
@@ -58,3 +64,38 @@ $primary-color: #333;
     transform: translateX(-10%);
     transition: all 1s ease-out;
 }
+
+
+.junction-project-card {
+    opacity: 0;
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+    transition: all 1s ease-out;
+}
+#pin3 {
+    @extend %pin;
+    grid-row: 6;
+}
+.junction-project-card.visible {
+    opacity: 1;
+    transform: translateX(10%);
+    transition: all 1s ease-out;
+}
+
+.junction-enemy {
+    opacity: 0;
+    height: 100%;
+    grid-row: 6;
+    grid-column: 2 / 3;
+    z-index: -1;
+    overflow: visible;
+    transition: all 1s ease-out;
+}
+.junction-enemy.visible {
+    opacity: 1;
+    
+    transform: translateX(-10%);
+    transition: all 1s ease-out;
+}
+
+

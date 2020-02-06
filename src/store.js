@@ -3,9 +3,7 @@ import thunk from 'redux-thunk'
 import {
     menuReducer,
     drawerReducer,
-    projectTabReducer,
-    welcomeVisibilityReducer,
-    threeDVisibilityReducer
+    projectTabReducer
 } from './reducers/navigationReducers'
 
 
@@ -13,8 +11,6 @@ const collectiveReducer = combineReducers({
     page: menuReducer,
     open: drawerReducer,
     projectTab: projectTabReducer,
-    welcomeCardVisibility: welcomeVisibilityReducer,
-    threeDCardVisibility: threeDVisibilityReducer,
 })
 
 // The store is defined here at the starting point
