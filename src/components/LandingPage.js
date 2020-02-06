@@ -19,7 +19,7 @@ const LandingPage = (props) => {
     const revealElement = document.getElementsByClassName('test-item')
     const callback = (event) => {
         console.log('Event fired!', event.type)
-        
+        props.setWelcomeVisibility()
     }
     useEffect(() => {
         new ScrollMagic.Scene({

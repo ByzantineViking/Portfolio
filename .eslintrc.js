@@ -23,8 +23,16 @@ module.exports = {
         "react-hooks/rules-of-hooks": "error",
         "indent": [
             "error",
-            4
+            4,
+            {
+                "SwitchCase": 1,
+                "MemberExpression":1,
+                "FunctionExpression": { "parameters": "first" },
+                "ImportDeclaration": "first",
+                "flatTernaryExpressions": true 
+            }
         ],
+        
         "quotes": [
             "error",
             "single"
