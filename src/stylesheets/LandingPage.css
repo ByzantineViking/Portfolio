@@ -1,12 +1,40 @@
 .landing-grid {
   display: grid;
-  grid-template-columns: 0.5fr 2fr 2fr 0.5fr;
-  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 10% auto 10px auto;
+  grid-template-rows: repeat(10, 1fr 1fr 1fr) 100px;
   gap: 1%;
+  overflow: hidden;
+  position: relative;
 }
 
-.about-me-item {
-  height: 100%;
+.welcome-item {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.threeD-project-card {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+#pin1 {
+  grid-row: 4;
+  font-size: 20px;
+}
+
+.test-item {
+  position: sticky;
+  top: 500px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transform: translateX(-40px);
+  transition: all 0.6s ease-out;
+}
+
+.test-item.visible {
+  background-color: purple;
+  transform: none;
 }
 
 /*# sourceMappingURL=LandingPage.css.map */

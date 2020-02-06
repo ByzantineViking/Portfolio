@@ -19,6 +19,7 @@
     "react-swipeable-views": "^0.13.8",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "scrollmagic": "^2.0.7",
     "stylelint-config-sass-guidelines": "^7.0.0"
   },
   "scripts": {
