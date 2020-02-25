@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import ScrollMagic from 'scrollmagic'
 import staircase from './LandingPageComponents/Images/grand_staircase_1.png'
 import enemy from './LandingPageComponents/Images/enemy.svg'
+import Cube from './Cube'
 
 /* CssBaseline:
  * Removes margin in all brosers
@@ -14,11 +15,12 @@ import enemy from './LandingPageComponents/Images/enemy.svg'
 import { CssBaseline, Container, Typography, Button, Paper, Box } from '@material-ui/core'
 import Me from './LandingPageComponents/Me'
 import ProjectCard from './LandingPageComponents/ProjectCard'
+import Divider from './Divider'
 
 
 const LandingPage = (props) => {
     // As scrollmagic pins are not compatible with React, use this to set pins visible
-    const pinDebug = 'pin'
+    const pinDebug = ''
     const controller = new ScrollMagic.Controller()
     const revealWelcome = document.getElementsByClassName('welcome-item')
     const revealThreeD = document.getElementsByClassName('threeD')
@@ -77,7 +79,7 @@ const LandingPage = (props) => {
             .on('start leave', eventLogger)
     })
     return(
-        <React.Fragment>
+        <div className="landing-page">
             <CssBaseline />
             <Container>
                 <div className="landing-grid">
@@ -88,6 +90,7 @@ const LandingPage = (props) => {
                         className="threeD-project-card threeD"
                         title="threeD"
                         body="A from-scratch 3D engine"
+                        href="https://github.com/ByzantineViking/threeD"
                     />
                     <img className="threeD-staircase threeD" src={staircase}/>
                     <div id="pin3">{pinDebug + (pinDebug ? '3' : '')}</div>
@@ -95,12 +98,21 @@ const LandingPage = (props) => {
                         className="junction-project-card junction"
                         title="Junction"
                         body="Graphics for a futuristic browser game"
+                        href="https://github.com/ByzantineViking/cybersecurity-for-kids"
                     />
                     <img className="junction-enemy junction" src={enemy} />
                 </div>
 
             </Container>
-        </React.Fragment>
+
+            
+
+            <Cube size="180" location={{ x: '80%', y: '140px' }} />
+            <Cube size="140" location={{ x: '60%', y: '150px' }} />
+            <Cube size="100" location={{ x: '45%', y: '200px' }} />
+            <Cube size="80" location={{ x: '35%', y: '280px' }} />
+            <Divider id="d1" color="red" className="divider" />
+        </div>
     )
 }
 

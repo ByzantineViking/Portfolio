@@ -3,12 +3,22 @@
 
 $primary-color: #333;
 
+.landing-page {
+    position: relative;
+}
+
 .landing-grid {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 1fr repeat(3, 1fr 1fr);
     overflow: hidden;
     position: relative;
+}
+.landing-grid div {
+    z-index: 6;
+}
+.landing-grid > img {
+    z-index: 5;
 }
 .welcome-item {
     grid-column: 1 / 2;
@@ -21,12 +31,11 @@ $primary-color: #333;
     height: min-content;
     justify-self: end;
     font-size: 20px;
-    z-index: 2;
+    z-index: 7;
 }
 #pin1 {
     @extend %pin;
     grid-row: 2;
-    
 }
 .welcome-item.hidden {
     opacity: 0;
@@ -54,7 +63,6 @@ $primary-color: #333;
     opacity: 0;
     grid-row: 4;
     grid-column: 1;
-    z-index: -1;
     overflow: visible;
     transition: all 0.5s ease-out;
 }
@@ -87,7 +95,6 @@ $primary-color: #333;
     height: 100%;
     grid-row: 6;
     grid-column: 2 / 3;
-    z-index: -1;
     overflow: visible;
     transition: all 1s ease-out;
 }
@@ -96,6 +103,56 @@ $primary-color: #333;
     
     transform: translateX(-10%);
     transition: all 1s ease-out;
+}
+.divider {
+    z-index: 4;
+}
+#d1 {
+    position: absolute;
+    top: 600px;
+    left:0px;
+}
+.cube-unit {
+    fill-opacity: 0.9;
+    stroke-miterlimit: 0;
+}
+
+.blue-cube {
+  --mainColor: #009CDE;
+  --strokeColor: #0079ad;
+  --lightColor: #00affa;
+  --darkColor: #008bc7;
+}
+.red-cube {
+  --mainColor: #B22222;
+  --strokeColor: #da3434;
+  --lightColor: #ff3232;
+  --darkColor: #a50000;
+}
+
+
+
+
+@keyframes moveX {
+    /* Default value 35px */
+  to { transform: translateX(var(--translate, 35px)); }
+}
+@keyframes moveY {
+    /* Default value 35px */
+  to { transform: translateY(var(--translate, 35px)); }
+}
+.m-left, .m-right {
+  animation: 2s moveX alternate infinite paused;
+}
+.m-up, .m-down {
+  animation: 2s moveY alternate infinite paused;
+}
+.m-left { --translate: -28px; }
+.m-right { --translate: 42px; }
+.m-up { --translate: -24px; }
+.m-down { --translate: 20px; }
+svg:hover * { 
+  animation-play-state: running; 
 }
 
 

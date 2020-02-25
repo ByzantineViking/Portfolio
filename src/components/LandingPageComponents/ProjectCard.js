@@ -18,6 +18,11 @@ const ProjectCard = (props) => {
                 <CardActions>
                     <Button
                         variant="outlined"
+                        href={props.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="primary"
+                        size="small"
                     >
                         Explore!
                     </Button>

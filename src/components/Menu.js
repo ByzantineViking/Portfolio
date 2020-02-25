@@ -58,7 +58,7 @@ const Menu = (props) => {
             <HideOnScroll {...props}>
                 <AppBar color="secondary">
                     <Toolbar>
-                        <Typography variant="h6" className={classes.title} color="textPrimary">
+                        <Typography variant="h6" className={classes.title}>
                             Teemu Saravirta
                         </Typography>
                         <Button color="inherit">Projects</Button>
