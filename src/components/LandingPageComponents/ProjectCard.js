@@ -1,7 +1,7 @@
 import React from 'react'
-import { Box, Card, Typography, Button, CardContent, CardActions } from '@material-ui/core'
+import { Card, Typography, Button, CardContent, CardActions } from '@material-ui/core'
 import { useStyles } from './CardStyles'
-
+import { Link } from 'react-router-dom'
 const ProjectCard = (props) => {
     const classes = useStyles()
     return(
@@ -23,6 +23,14 @@ const ProjectCard = (props) => {
                         rel="noopener noreferrer"
                         color="primary"
                         size="small"
+                    >
+                        Code&lt;&gt;
+                    </Button>
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        size="small"
+                        component={Link} to={`/${props.project}`}
                     >
                         Explore!
                     </Button>

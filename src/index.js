@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-
+import ThreeD from './components/ThreeD'
 import App from './App'
 import LandingPage from './components/LandingPage'
+import About from './components/About'
 
 import { createMuiTheme } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/styles'
@@ -33,6 +34,8 @@ const render = () => {
                 <ThemeProvider theme={theme}>
                     <Route path="/" component={App} />
                     <Route exact path="/" component={LandingPage} />
+                    <Route exact path="/threeD" component={ThreeD} />
+                    <Route exact path="/about" component={About} />
                 </ThemeProvider>
             </Router>
         </Provider>

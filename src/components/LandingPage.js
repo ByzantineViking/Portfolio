@@ -3,7 +3,7 @@ import '../stylesheets/LandingPage.css'
 import { connect } from 'react-redux'
 import ScrollMagic from 'scrollmagic'
 import staircase from './LandingPageComponents/Images/grand_staircase_1.png'
-import enemy from './LandingPageComponents/Images/enemy.svg'
+import enemy from '../resources/enemy.svg'
 import Cube from './Cube'
 
 /* CssBaseline:
@@ -15,7 +15,7 @@ import Cube from './Cube'
 import { CssBaseline, Container, Typography, Button, Paper, Box } from '@material-ui/core'
 import Me from './LandingPageComponents/Me'
 import ProjectCard from './LandingPageComponents/ProjectCard'
-import Divider from './Divider'
+import CubeDivider from './CubeDivider'
 
 
 const LandingPage = (props) => {
@@ -91,6 +91,7 @@ const LandingPage = (props) => {
                         title="threeD"
                         body="A from-scratch 3D engine"
                         href="https://github.com/ByzantineViking/threeD"
+                        project="threeD"
                     />
                     <img className="threeD-staircase threeD" src={staircase}/>
                     <div id="pin3">{pinDebug + (pinDebug ? '3' : '')}</div>
@@ -111,7 +112,7 @@ const LandingPage = (props) => {
             <Cube size="140" location={{ x: '60%', y: '150px' }} />
             <Cube size="100" location={{ x: '45%', y: '200px' }} />
             <Cube size="80" location={{ x: '35%', y: '280px' }} />
-            <Divider id="d1" color="red" className="divider" />
+            <CubeDivider id="d1" color="red" className="divider" />
         </div>
     )
 }

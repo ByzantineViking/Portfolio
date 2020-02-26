@@ -3,7 +3,7 @@ import React from 'react'
 
 
 
-const Divider = (props) => {
+const CubeDivider = (props) => {
     return(
         <svg className="divider"viewBox="130 50 300 230" width="100%" height="800px" id={props.id}>
             <defs>
@@ -49,4 +49,4 @@ const Divider = (props) => {
 }
 
 
-export default Divider
+export default CubeDivider

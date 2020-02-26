@@ -22,7 +22,7 @@ import {
     KeyboardArrowUp,
 
 } from '@material-ui/icons'
-
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -61,8 +61,8 @@ const Menu = (props) => {
                         <Typography variant="h6" className={classes.title}>
                             Teemu Saravirta
                         </Typography>
-                        <Button color="inherit">Projects</Button>
-                        <Button color="inherit">About Me</Button>
+                        <Button color="inherit" component={Link} to="/">Projects</Button>
+                        <Button color="inherit" component={Link} to="/about">About Me</Button>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
