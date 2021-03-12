@@ -20,11 +20,11 @@ const Copyright = () => {
     )
 }
 
-const Footer = (props) => {
+const Footer = () => {
 
-    return(
+    return (
         <div style={styles}>
-            <Copyright/>
+            <Copyright />
         </div>
     )
 }

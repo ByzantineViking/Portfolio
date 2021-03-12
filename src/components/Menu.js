@@ -1,27 +1,15 @@
 import React from 'react'
 import { setPage, toggleDrawer } from '../reducers/navigationReducers'
 import {
-    Container,
     Typography,
-    Box,
     Button,
     AppBar,
     Toolbar,
-    IconButton,
     useScrollTrigger,
-    Zoom,
     // Floating Action Button
-    Fab,
     Slide
 } from '@material-ui/core'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
-import { green } from '@material-ui/core/colors'
-import {
-    AccountCircle,
-    Menu as MenuIcon,
-    KeyboardArrowUp,
-
-} from '@material-ui/icons'
+import { makeStyles } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -52,7 +40,7 @@ HideOnScroll.propTypes = {
 }
 const Menu = (props) => {
     const classes = useStyles()
-    return(
+    return (
         <div className={classes.root}>
 
             <HideOnScroll {...props}>

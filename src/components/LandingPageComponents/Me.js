@@ -3,11 +3,11 @@ import React from 'react'
 import { Typography, Button, Card, CardContent, CardActions, Slide } from '@material-ui/core'
 import { useStyles } from './CardStyles'
 
-const Me = (props) => {
+const Me = () => {
     const classes = useStyles()
-    return(
+    return (
         <div className="welcome-item">
-            <Slide direction="up" in={true} timeout={1000,500} mountOnEnter unmountOnExit>
+            <Slide direction="up" in={true} timeout={1000, 500} mountOnEnter unmountOnExit>
                 <Card className={classes.root}>
                     <CardContent>
                         <Typography variant='h3' paragraph>

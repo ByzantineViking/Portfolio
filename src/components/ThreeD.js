@@ -8,9 +8,11 @@ import {
 } from '@material-ui/core'
 import '../stylesheets/ThreeD.css'
 import DiagonalDivider from './DiagonalDivider'
-const ThreeD = (props) => {
-    
-    return(
+
+
+const ThreeD = () => {
+
+    return (
         <div className="threeD-page">
             <Card className="header">
                 <CardContent>

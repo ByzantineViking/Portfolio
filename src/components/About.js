@@ -10,7 +10,7 @@ import '../stylesheets/About.css'
 
 
 const About = () => {
-    return(
+    return (
         <div className='about-flex'>
             <Container
                 className="about-page"
@@ -23,7 +23,7 @@ const About = () => {
                             variant="h2"
                         >
                             Me, shortly.
-                    </Typography>
+                        </Typography>
                         <Typography
                             variant="body1">
                             I&apos;m a second year Computer Science Student at Aalto University, curious as hell. Into web development,
@@ -31,13 +31,13 @@ const About = () => {
                             vikings guarding the emperor in Constantinople. Somehow them making the boat journey all the way over there, just
                             seems absolutely crazy to me. I&apos;d prob wouldn&apos;t make the best bodyguard but I&apos;ll
                             go wherever I can make an impact, following in their steps.
-                    </Typography>
+                        </Typography>
                     </CardContent>
 
                 </Card>
             </Container>
         </div>
-        
+
     )
 }
 

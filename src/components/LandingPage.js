@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import '../stylesheets/LandingPage.css'
 import { connect } from 'react-redux'
 import ScrollMagic from 'scrollmagic'
-import staircase from './LandingPageComponents/Images/grand_staircase_1.png'
+import staircase from '../resources/grand_staircase_1.png'
 import enemy from '../resources/enemy.svg'
 import Cube from './Cube'
 
@@ -12,13 +12,13 @@ import Cube from './Cube'
  * box-sizing is set globally on the <html> element to border-box, every element is declared to inherit this property
  * font antialiasing is enabled for the Roboto font.
  */
-import { CssBaseline, Container, Typography, Button, Paper, Box } from '@material-ui/core'
+import { CssBaseline, Container } from '@material-ui/core'
 import Me from './LandingPageComponents/Me'
 import ProjectCard from './LandingPageComponents/ProjectCard'
 import CubeDivider from './CubeDivider'
 
 
-const LandingPage = (props) => {
+const LandingPage = () => {
     // As scrollmagic pins are not compatible with React, use this to set pins visible
     const pinDebug = ''
     const controller = new ScrollMagic.Controller()
@@ -78,12 +78,12 @@ const LandingPage = (props) => {
             .addTo(controller) // assign the scene to the controller
             .on('start leave', eventLogger)
     })
-    return(
+    return (
         <div className="landing-page">
             <CssBaseline />
             <Container>
                 <div className="landing-grid">
-                    <Me/>
+                    <Me />
                     <div id="pin1">{pinDebug + (pinDebug ? '1' : '')}</div>
                     <div id="pin2">{pinDebug + (pinDebug ? '2' : '')}</div>
                     <ProjectCard
@@ -93,7 +93,7 @@ const LandingPage = (props) => {
                         href="https://github.com/ByzantineViking/threeD"
                         project="threeD"
                     />
-                    <img className="threeD-staircase threeD" src={staircase}/>
+                    <img className="threeD-staircase threeD" src={staircase} />
                     <div id="pin3">{pinDebug + (pinDebug ? '3' : '')}</div>
                     <ProjectCard
                         className="junction-project-card junction"
@@ -106,7 +106,7 @@ const LandingPage = (props) => {
 
             </Container>
 
-            
+
 
             <Cube size="180" location={{ x: '80%', y: '140px' }} />
             <Cube size="140" location={{ x: '60%', y: '150px' }} />

@@ -1,14 +1,12 @@
-
-
 import React from 'react'
 import divider from '../resources/divider.svg'
 
 
-const DiagonalDivider = (props) => {
-    
-    return(
+const DiagonalDivider = () => {
+
+    return (
         <div className="divider">
-            <img src={ divider } />
+            <img src={divider} />
         </div>
     )
 }
