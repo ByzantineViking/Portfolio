@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "eslint-plugin-jest": "^23.6.0",
-    "stylelint": "^13.0.0",
+    "stylelint": "^15.10.1",
     "stylelint-scss": "^3.14.2"
   }
 }
